@@ -33,14 +33,9 @@ public class PetsImplementation implements Serializable {
         RestAssured.baseURI = "https://petstore.swagger.io/v2/pet";  //URL base de la petición
     }
 
-    // Get Pet *************************************************************************
+    // Get Pet ************************************************************************
     @Given("the following get request that brings us the pet")
     public  Response getPet(){
-        //Devuelve el GetPet
-        //.log().all() es opcional. Es solo para obtener trazas por el log.
-        //En .param pasamos el parÃ¡metro 2 para 'page' (igual que lo tenemos en postman)
-        //En .get pasamos lo que va despuÃ©s de la baseUri (despuÃ©s del /api/)
-
         Response responseGetPet = given().log().all().get("/123456");
         return responseGetPet;
     }
